@@ -53,23 +53,26 @@ WasteTrack is a comprehensive waste management and tracking system that helps co
 ### Installation
 
 1. Clone the repository:
-\`\`\`bash
+   
+```bash
 git clone https://github.com/PraneeshShetty/WasteTrack.git
 cd WasteTrack
-\`\`\`
+```
 
 2. Start the backend services:
-\`\`\`bash
+
+```bash
 cd EndpointAPI-main
 docker-compose up -d
-\`\`\`
+```
 
 3. Start the frontend application:
-\`\`\`bash
+
+```bash
 cd ../wastetrack-main
 npm install
 npm run dev
-\`\`\`
+```
 
 ## 📱 Application Structure
 
