@@ -42,7 +42,7 @@ services:
 
   web-app:
     build:
-      context: ../ScrapSnapWEB-main
+      context: ../Wastetrack-main
       dockerfile: Dockerfile
     environment:
       VITE_API_BASE_URL: http://endpoint-api:3000
