@@ -1,0 +1,209 @@
+// Modern UI Variables
+:root {
+    --primary-color: #2563eb;
+    --secondary-color: #3b82f6;
+    --accent-color: #60a5fa;
+    --success-color: #22c55e;
+    --warning-color: #f59e0b;
+    --danger-color: #ef4444;
+    --background-light: #f8fafc;
+    --background-dark: #1e293b;
+    --text-light: #f1f5f9;
+    --text-dark: #334155;
+    --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --hover-transform: scale(1.02) translateY(-2px);
+    --transition-fast: 0.2s ease;
+    --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+// Modern Card Styles
+.card {
+    background: var(--surface-card);
+    border-radius: 1rem;
+    box-shadow: var(--card-shadow);
+    transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+    overflow: hidden;
+    
+    &:hover {
+        transform: var(--hover-transform);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+}
+
+// 3D Button Effect
+.p-button {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+    
+    &:active {
+        transform: translateY(2px);
+    }
+    
+    &.p-button-raised {
+        &:before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            background: inherit;
+            transform: translateZ(-1px);
+            filter: brightness(0.8);
+        }
+    }
+}
+
+// Modern Navigation
+.layout-topbar {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+    
+    .layout-topbar-button {
+        transition: transform var(--transition-fast);
+        
+        &:hover {
+            transform: translateY(-2px);
+        }
+    }
+}
+
+// Modern Menu
+.layout-menu {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    
+    .layout-menuitem-root-text {
+        font-weight: 600;
+        letter-spacing: 0.5px;
+    }
+    
+    .layout-menuitem-icon {
+        transition: transform var(--transition-fast);
+    }
+    
+    .layout-menuitem-root-link:hover {
+        .layout-menuitem-icon {
+            transform: scale(1.1);
+        }
+    }
+}
+
+// Dashboard Cards
+.overview-box {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--surface-card) 0%, var(--surface-ground) 100%);
+    
+    &:before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
+        transform: rotate(45deg);
+        pointer-events: none;
+    }
+    
+    .overview-icon {
+        transition: transform var(--transition-smooth);
+    }
+    
+    &:hover .overview-icon {
+        transform: scale(1.1) rotate(-10deg);
+    }
+}
+
+// Modern Table
+.p-datatable {
+    .p-datatable-thead > tr > th {
+        backdrop-filter: blur(4px);
+        background: rgba(255, 255, 255, 0.6);
+    }
+    
+    .p-datatable-tbody > tr {
+        transition: transform var(--transition-fast);
+        
+        &:hover {
+            transform: translateX(4px);
+            background: rgba(var(--primary-color-rgb), 0.05);
+        }
+    }
+}
+
+// Modern Form Controls
+.p-inputtext, .p-dropdown, .p-multiselect {
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+    
+    &:focus {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+}
+
+// Animation Classes
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity var(--transition-smooth);
+}
+
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
+}
+
+.slide-up-enter-active,
+.slide-up-leave-active {
+    transition: transform var(--transition-smooth), opacity var(--transition-smooth);
+}
+
+.slide-up-enter-from,
+.slide-up-leave-to {
+    transform: translateY(20px);
+    opacity: 0;
+}
+
+// Modern Scrollbar
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 4px;
+    
+    &:hover {
+        background: var(--secondary-color);
+    }
+}
+
+// Glassmorphism Effects
+.glass-panel {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 1rem;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+// Responsive Improvements
+@media screen and (max-width: 768px) {
+    .card {
+        margin: 1rem 0;
+    }
+    
+    .overview-box {
+        margin-bottom: 1.5rem;
+    }
+    
+    .layout-topbar {
+        padding: 0.5rem;
+    }
+}
